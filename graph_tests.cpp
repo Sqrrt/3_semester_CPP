@@ -91,7 +91,7 @@ TEST(graph, sort){
     cout<<"\n";
     //ASSERT_ANY_THROW(graph.top_sort());
 }
-TEST (graph, path_find){
+TEST (graph, path_find){//этот тест для нахождения пути
     Graph<int> graph;
     graph.insert_ver(1);
     graph.insert_ver(2);
