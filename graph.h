@@ -164,8 +164,6 @@ public:
         }
         number_of_ver--;
         graph->erase(Pair<T, T>(ver, ver));
-        //auto iter = remove(vec.begin(), vec.end(), ver);
-        //vec.erase(iter, vec.end());
         auto it = find(vec.begin(), vec.end(), ver);
         if(it != vec.end()){
             vec.erase(it);
@@ -274,7 +272,7 @@ public:
     }
 
     //algorithms returns shortest distance
-    int dexter(T start, T finish){//новый дейкстра, немного красивее предыдущего
+    int dexter(T start, T finish){
         unordered_map<T, int> weights = deixtra(start, finish);
         for(int i = 1; i < vec.size(); i++){
             if(vec[i] == finish){
@@ -297,10 +295,6 @@ public:
                 for(int lol = 0; lol < number_of_ver; lol++){
                     labels.push_back(result[lol]+find_distance(vec[lol], vec[o_o]));
                 }
-                /*for(auto iter = labels.begin(); iter != labels.end(); iter++){
-                    cout<<*iter<<" ";
-                }
-                cout<<"\n";*/
                 result[o_o] = min(result[o_o], *min_element(labels.begin(), labels.end()));
                 //cout<< result[o_o]<<" \n";
                 labels.clear();
@@ -342,7 +336,6 @@ public:
             }
         }
         for(int p = 0; p < number_of_ver; p++){
-            //cout<< result[p]<< " ";
             if(vec[p] == end){
                 return result[p];
             }
